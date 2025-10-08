@@ -8,8 +8,6 @@
 [functions]
   external_node_modules = ["express", "@optimizely-opal/opal-tools-sdk"]
   node_bundler = "esbuild"
-
-[functions]
   included_files = ["netlify/assets/ga4_pages_and_screens.json"]
 
 [[redirects]]
