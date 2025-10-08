@@ -1,0 +1,23 @@
+[build]
+  command = "npm run build"
+  functions = "dist/netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[functions]
+  external_node_modules = ["express", "@optimizely-opal/opal-tools-sdk"]
+  node_bundler = "esbuild"
+
+[functions]
+  included_files = ["netlify/assets/ga4_pages_and_screens.json"]
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/index"
+  status = 200
